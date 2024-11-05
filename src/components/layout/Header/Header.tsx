@@ -8,7 +8,7 @@ import { FaBell } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { MdOutlineRateReview } from "react-icons/md";
-import Home from "@/components/pages/HomeSections/Home";
+
 import Link from "next/link";
 
 const Header: FC = () => {
@@ -23,15 +23,19 @@ const Header: FC = () => {
             <ImSpotify />
           </h1>
           <div className={scss.nav}>
-            <Link className={scss.home} href="/home"><GoHomeFill /></Link>
-            
+            <Link className={scss.home} href="/home">
+              <GoHomeFill />
+            </Link>
+
             <div className={scss.inp}>
               <input type="text" placeholder="Что хочешь включить?" />
               <button className={scss.search}>
                 <IoIosSearch />
               </button>
               <button className={scss.review}>
-                <Link href={"/music"}><MdOutlineRateReview /></Link>
+                <Link href={"/music"}>
+                  <MdOutlineRateReview />
+                </Link>
               </button>
             </div>
           </div>
@@ -44,11 +48,19 @@ const Header: FC = () => {
             <button className={scss.user}>
               <FaRegUser />
             </button>
-            <button className={scss.registr} onClick={() => router.push("/auth/signup")}>
-              {" "}
-              Зарегистрироваться{" "}
+            <button
+              className={scss.registr}
+              onClick={() => router.push("/auth/signup")}
+            >
+              Зарегистрироваться
             </button>
-            <button className={scss.auth} onClick={() => router.push("/auth/login")}> Войти </button>
+            <button
+              className={scss.auth}
+              onClick={() => router.push("/auth/login")}
+            >
+             
+              Войти
+            </button>
           </div>
         </div>
       </div>
