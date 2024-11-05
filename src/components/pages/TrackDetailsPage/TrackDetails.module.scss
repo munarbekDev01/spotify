@@ -1,0 +1,41 @@
+.TrackDetails {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .content {
+        width: 70%;
+        background-color: #008000;
+        border-radius: 10px 10px 0 0 ;
+        padding: 80px 20px 20px 20px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        .fotoForArt {
+            img {
+                width: 150px;
+                height: 150px;
+                border-radius: 5px;
+
+            }
+        }
+        .textData {
+            display: flex;
+            flex-direction: column;
+            h1 {
+                font-size: 94px;
+                font-weight: 800;
+            }
+            p {
+                display: flex;
+                align-items: center;
+
+                img {
+                    border-radius: 50%;
+                    width: 25px;
+                    height: 25px;
+                    margin-right: 3px;
+                }
+            }
+        }
+    }
+}
