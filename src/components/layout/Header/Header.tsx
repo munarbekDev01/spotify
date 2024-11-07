@@ -1,5 +1,5 @@
 "use client";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import scss from "./Header.module.scss";
 import { ImSpotify } from "react-icons/im";
 import { GoHomeFill } from "react-icons/go";
@@ -10,10 +10,19 @@ import { useRouter } from "next/navigation";
 import { MdOutlineRateReview } from "react-icons/md";
 
 import Link from "next/link";
+import { useGetSeveralAlbumsQuery } from "@/redux/api/spotify";
+// import axios from "axios";
 
 const Header: FC = () => {
   const router = useRouter();
-
+  //  useEffect(() => {
+  //   axios.post('https://accounts.spotify.com/api/token').then((res) => {
+  //     console.log(res);
+  //   })
+  // }, [])
+  const {data} = useGetSeveralAlbumsQuery()
+  console.log(data);
+  
   return (
     <header className={scss.Header}>
       <div className="container">
