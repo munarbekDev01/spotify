@@ -1,0 +1,46 @@
+.Footer {
+    .content {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        .company {
+            width: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            line-height: 33px;
+          
+            h3 {
+                color: white;
+                font-size: 20px;
+                font-weight: 700;
+               }
+            b {
+                color: grey;
+                &:hover {
+                    color: white;
+                    border-bottom: 1px solid white;
+                }
+            }
+        }
+        .companyySite{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            a{
+                // border: 2px solid red;
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                border-radius: 50%;
+                background: rgba(184, 182, 182, 0.233);
+                color: white;
+                &:hover{
+                    background-color: #9a959593;
+                    color: white;
+                }
+            }
+
+        }
+       
+    }
+}
