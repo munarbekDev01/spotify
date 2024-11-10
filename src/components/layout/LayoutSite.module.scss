@@ -1,8 +1,26 @@
 .LayoutSite {
     display: flex;
     flex-direction: column;
-    min-height: 100vh ;
     justify-content: space-between;
+    
+    .mediaTec {
+    padding: 8px 30px;
+        display: flex;
+gap: 10px;  
+.main {
+
+    width: 100%;
+    background-color: #292929;
+    border-radius: 10px;
+    padding: 0px 20px;
+    max-height: 600px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    main {
+    }
+}   
+
+    }
     footer {
         margin-top: auto;
     }

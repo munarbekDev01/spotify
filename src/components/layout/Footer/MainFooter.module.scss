@@ -1,0 +1,12 @@
+.MainFooter {
+    .content {
+        .footerTop {
+            display: flex;
+            .text {
+                display: flex;
+                flex-direction: column;
+                width: 200px;
+            }
+        }
+    }
+}

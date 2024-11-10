@@ -1,0 +1,56 @@
+.Home {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .content {
+        width: 100%;
+        border-radius: 10px 10px 0 0 ;
+        padding: 20px 0;
+        .btnForAllAndMusic {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 40px;
+           button {
+            padding: 7px 10px;
+            border: 0;
+            font-weight: 600;
+            cursor: pointer;
+            background: rgb(75, 74, 74);
+            border-radius: 20px;
+            transition: 0.8s;
+           }
+        }
+        .specialForYou {
+            .specialForYouText {
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                p {
+                font-size: 13px;      
+                font-weight: 800;
+                cursor: pointer;
+                letter-spacing: 0.5px;
+                &:hover {
+                    border-bottom: 3px solid white;
+                }
+                }
+                h1 {
+                    cursor: pointer;
+                    font-weight: 600;
+                    font-size: 23px;
+                    &:hover {
+                        border-bottom: 3px solid white;
+                        
+                    }
+                }
+            }
+            .blocks {
+                display: flex;
+                gap: 30px;
+                margin-top: 30px;
+               
+            }
+        }
+
+     }}

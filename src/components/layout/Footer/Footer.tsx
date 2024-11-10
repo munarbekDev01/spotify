@@ -11,11 +11,16 @@ import { FaFacebook } from "react-icons/fa";
 const Footer: FC = () => {
  return (
   <footer className={scss.Footer}>
-   <div className="container">
     <div className={scss.content}>
-        <h1>footer</h1>
+        <div className={scss.footerTop}>
+
+        <div className={scss.text}></div>
+        <div className={scss.text}></div>
+        <div className={scss.text}></div>
+        <div className={scss.text}></div>
+        <div className=""></div>
+        </div>
     </div>
-   </div>
   </footer>
  );
 };

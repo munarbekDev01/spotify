@@ -1,40 +1,22 @@
-
 import { api as index } from "..";
 const api = index.injectEndpoints({
   endpoints: (build) => ({
-    getSeveralAlbums: build.query<SPOTIFY.GetSpotifyAlbumsResponse, SPOTIFY.GetSpotifyAlbumsRequest>({
+    getSeveralPlaylist: build.query<SPOTIFY.PlayListResponse, SPOTIFY.PlayListRequest>({
       query: () => ({
-        url: `/albums`,
+        url: `/me/playlists`,
         method: "GET",
       }),
-      providesTags: ["spotify"]
-    // add'дайте название для функции': build.mutation<>({
-    //   query: (data) => ({
-    //     url: ``,
-    //     method: "POST",
-    //     body: data,
-    //   }),
-    //   invalidatesTags: ["напишите название которое дали как тег"],
-    // }),
-    // delete'дайте название для функции': build.mutation<>({
-    //   query: (_id) => ({
-    //     url: `${_id}`,
-    //     method: "DELETE",
-    //   }),
-    //   invalidatesTags: ["напишите название которое дали как тег"],
-    // }),
-    // Update'дайте название для функции': build.mutation<>({
-    //   query: ({ _id, newData }) => ({
-    //     url: `${_id}`,
-    //     method: "PATCH",
-    //     body: newData,
-    //   }),
-    //   invalidatesTags: ["напишите название которое дали как тег"],
+      providesTags: ["spotify"],
+    }),
+    getPlaylistWithId: build.query<SPOTIFY.PlayListWithIdResponse, SPOTIFY.PlayListWithIdRequest>({
+      query: (playlist_id) => ({
+        url: `/playlists/${playlist_id}`,
+        method: "GET",
+      }),
+      providesTags: ["spotify"],
     }),
   }),
 });
 
-export const {useGetSeveralAlbumsQuery} = api;
-
-
+export const {useGetSeveralPlaylistQuery, useLazyGetPlaylistWithIdQuery} = api;
 

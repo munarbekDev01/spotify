@@ -8,21 +8,42 @@ import { FaBell } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { MdOutlineRateReview } from "react-icons/md";
-
 import Link from "next/link";
-import { useGetSeveralAlbumsQuery } from "@/redux/api/spotify";
+import { useGetSeveralPlaylistQuery, useLazyGetPlaylistWithIdQuery } from "@/redux/api/spotify";
 // import axios from "axios";
 
 const Header: FC = () => {
   const router = useRouter();
+
+  const number = 10
+  console.log(number);
+  
+
+
   //  useEffect(() => {
   //   axios.post('https://accounts.spotify.com/api/token').then((res) => {
   //     console.log(res);
   //   })
   // }, [])
-  const {data} = useGetSeveralAlbumsQuery()
+  const {data} = useGetSeveralPlaylistQuery()
+  
   console.log(data);
   
+
+  const handleLogin = () => {
+    window.open(
+      `${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/auth/login`,
+      "_self"
+    );
+  };
+
+  const handleLogout = () => {
+    window.open(
+      `${process.env.NEXT_PUBLIC_FRONTEND_URL}/api/auth/logout`,
+      "_self"
+    );
+  };
+
   return (
     <header className={scss.Header}>
       <div className="container">
@@ -41,6 +62,9 @@ const Header: FC = () => {
                 <IoIosSearch />
               </button>
               <button className={scss.review}>
+                <div className={scss.line}>
+
+                </div>
                 <Link href={"/music"}>
                   <MdOutlineRateReview />
                 </Link>
@@ -58,13 +82,14 @@ const Header: FC = () => {
             </button>
             <button
               className={scss.registr}
-              onClick={() => router.push("/auth/signup")}
+              onClick={handleLogout}
             >
               Зарегистрироваться
             </button>
             <button
               className={scss.auth}
-              onClick={() => router.push("/auth/login")}
+              onClick={handleLogin}
+              
             >
              
               Войти
