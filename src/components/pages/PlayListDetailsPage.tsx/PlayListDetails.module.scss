@@ -1,0 +1,41 @@
+.PlayListDetails {
+    .content {
+        border-radius: 10px 10px 0 0;
+        padding: clamp(20px, 5vw, 80px) clamp(10px, 2vw, 20px);
+        display: flex;
+        gap: 20px;
+        align-items: end;
+
+        .fotoForArt {
+            img {
+                width: clamp(120px, 15vw, 150px);
+                height: clamp(120px, 15vw, 150px);
+                border-radius: 5px;
+            }
+        }
+
+        .textData {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: start;
+
+            h1 {
+                font-size: clamp(36px, 4vw, 94px);
+                font-weight: 800;
+            }
+
+            p {
+                display: flex;
+                align-items: center;
+
+                img {
+                    border-radius: 50%;
+                    width: clamp(20px, 4vw, 25px);
+                    height: clamp(20px, 4vw, 25px);
+                    margin-right: 3px;
+                }
+            }
+        }
+    }
+}

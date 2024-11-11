@@ -1,31 +1,32 @@
-"use client"
+"use client";
 import { FC, useEffect, useRef, useState } from "react";
 import scss from "./MusicListCard.module.scss";
 import Image from "next/image";
-import foto from "../../assets/img/foto.jpeg";
 import { BsThreeDots } from "react-icons/bs";
 import { CiCirclePlus } from "react-icons/ci";
 import { FaCircleCheck } from "react-icons/fa6";
 import { FaPlay, FaPause } from "react-icons/fa6";
 import { CgAdd } from "react-icons/cg";
-import {
-    AiOutlinePlus,
-    AiOutlineShareAlt,
-  } from "react-icons/ai";
-  import {
-    FaRecordVinyl,
-    FaSpotify,
-    FaUserAlt,
-  } from "react-icons/fa";
-  import { IoIosRadio } from "react-icons/io";
+import { AiOutlinePlus, AiOutlineShareAlt } from "react-icons/ai";
+import { FaRecordVinyl, FaSpotify, FaUserAlt } from "react-icons/fa";
+import { IoIosRadio } from "react-icons/io";
 import { MdQueueMusic } from "react-icons/md";
 import { GiMusicalNotes } from "react-icons/gi";
+import { usePathname, useRouter } from "next/navigation";
 
-const MusicListCard: FC = () => {
-  const [check, setCheck] = useState(false);
+const MusicListCard: FC = ({ el, idx }: any) => {
+  const { track } = el;
+  const router = useRouter();
+  const pathName = usePathname();
+  const playlisPathName = pathName.slice(0, 9) === "/playlist" ? true : false;
+  const [check, setCheck] = useState(true);
   const [play, setPlay] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const modalRef = useRef<HTMLDivElement>(null);
+  const img = track?.album?.images[0]?.url || "/default-image.jpg";
+
+  console.log(img, "sd");
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -40,34 +41,53 @@ const MusicListCard: FC = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
- return (
-  <section className={scss.MusicListCard}>
-    <div className={scss.content}>
+  return (
+    <section className={scss.MusicListCard}>
+      <div className={scss.content}>
         <div className={scss.imgAndName}>
-        <div className={scss.foto}>
-            <Image src={foto} alt=""/>
-            <a  onClick={() => setPlay(!play)}>
-            {play ? <FaPause /> : <FaPlay />}
-          </a>
+          {!playlisPathName ? null : (
+            <a className={scss.idx2} onClick={() => setPlay(!play)}>
+              {play ? <FaPause /> : <FaPlay />}
+            </a>
+          )}
+          {playlisPathName ? (
+            <h5
+              className={scss.idx}
+              style={{
+                width: "10px",
+                fontWeight: "100",
+              }}
+            >
+              {idx + 1}
+            </h5>
+          ) : null}
+          <div className={scss.foto}>
+            <Image width={64} height={64} src={img} alt="" />
+            {playlisPathName ? null : (
+              <a onClick={() => setPlay(!play)}>
+                {play ? <FaPause /> : <FaPlay />}
+              </a>
+            )}
+          </div>
+          <div className={scss.nameData}>
+            <p onClick={() => router.push(`/track/${track.id}`)}>
+              {`${track.name}`}{" "}
+            </p>
+            <a>{track.artists.map((el: any) => el.name)}</a>
+          </div>
         </div>
-        <div className={scss.nameData}>
-            <p>{`жаным ау сен`} </p>
-            <a >Raim</a>
-        </div>
-
-        </div>
-        <p className={scss.numbersViewer}>2 667 384 </p>
+        {(playlisPathName && (
+          <p className={scss.numbersViewer}>{track.album.name} </p>
+        )) || <p className={scss.numbersViewer}>{"11213"} </p>}
         <div className={scss.addTime}>
-            <a className={scss.check} onClick={() => setCheck(!check)}> {check ? (
-              <CiCirclePlus  />
-            ) : (
-              <FaCircleCheck />
-            )}</a>
-            <span>{"2:54"}</span>
-            <div className={scss.modDot}>
-            <span onClick={() => setShowModal(!showModal)}>
+          <span className={scss.check} onClick={() => setCheck(!check)}>
+            {check ? <CiCirclePlus /> : <FaCircleCheck />}
+          </span>
+          <span>{"2:54"}</span>
+          <div className={scss.modDot}>
+            <a onClick={() => setShowModal(!showModal)}>
               <BsThreeDots />
-            </span>
+            </a>
             {showModal && (
               <div className={scss.modal} ref={modalRef}>
                 <ul>
@@ -75,12 +95,20 @@ const MusicListCard: FC = () => {
                     <AiOutlinePlus />
                     Добавить в плейлист
                   </li>
-                  <li onClick={() => {
-                    setShowModal(false);
-                    setCheck(!check);
-                  }}>
-                    {check ? <CgAdd style={{ fontSize: "20px" }} /> :  <FaCircleCheck />}
-                    {check ? "Добавить в любимые треки" : "Удалить из любимых треков"}
+                  <li
+                    onClick={() => {
+                      setShowModal(false);
+                      setCheck(!check);
+                    }}
+                  >
+                    {check ? (
+                      <CgAdd style={{ fontSize: "20px" }} />
+                    ) : (
+                      <FaCircleCheck />
+                    )}
+                    {check
+                      ? "Добавить в любимые треки"
+                      : "Удалить из любимых треков"}
                   </li>
                   <li>
                     <MdQueueMusic />
@@ -112,9 +140,9 @@ const MusicListCard: FC = () => {
             )}
           </div>
         </div>
-   </div>
-  </section>
- );
+      </div>
+    </section>
+  );
 };
 
 export default MusicListCard;

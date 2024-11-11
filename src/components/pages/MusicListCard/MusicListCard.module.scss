@@ -1,114 +1,138 @@
 .MusicListCard {
-    .content {
-        width: 100%;
-        padding: 10px 10px;    
+  .content {
+    transition: 0.7s;
+    width: 100%;
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &:hover {
+      background: rgba(15, 15, 15, 0.467);
+      cursor: pointer;
+      border-radius: 7px;
+      .imgAndName {
+        .idx2 {
+          display: flex;
+        }
+        .idx {
+          display: none;
+        }
+        .foto {
+          a {
+            background: rgba(0, 0, 0, 0.381);
+            opacity: 1;
+          }
+        }
+      }
+      .addTime {
+        .check,
+        .modDot {
+          opacity: 1;
+        }
+        a,
+        p {
+          opacity: 1;
+        }
+      }
+    }
+    .imgAndName {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .idx2 {
+        display: none;
+      }
+      .idx {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        &:hover {
-            background: rgba(15, 15, 15, 0.467);
-            cursor: pointer;
-            border-radius: 7px;
-            .imgAndName {
-                .foto {
-                   
-                    a {
-                        background: rgba(0, 0, 0, 0.381);
-                        opacity: 1;
-                        
-                    }
-                }
-            }
-            .addTime { 
-                a,p {
-                    opacity: 1;
-                }
-            }
+      }
+      .foto {
+        position: relative;
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 5px;
         }
-        .imgAndName {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            .foto {
-                position: relative;
-                img {
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 5px;
-                }
-                a {
-                    position: absolute;
-                    left: 20px;
-                    top: 16px;
-                    opacity: 0;
-                }
-            }
-            h3 {
-                margin-left: 20px;
-                font-size: 18px;
-                font-weight: 500;
-            }
+        a {
+          position: absolute;
+          left: 20px;
+          top: 16px;
+          opacity: 0;
         }
-        .nameData {
-            p,a {
-                &:hover {
-                    border-bottom: 1px solid white;
-                }
-            }
-        }
-        .addTime {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            .check {
-                opacity: 0;
-            }
-            .modDot {
+      }
+      h3 {
+        margin-left: 20px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+    .nameData {
+      p,
+      a {
+        width: 200px;
 
-                position: relative;         
-                span {
-                    font-size: 30px;
-                    color: rgba(255, 255, 255, 0.66);
-                    &:hover {
-                        color: white;
-                        cursor: pointer;
-                    }
-                }
-                .modal {
-                    position: absolute;
-                    bottom: 30px;
-                    left: -400px;
-                    background-color: #282828;
-                    color: #fff;
-                    border-radius: 8px;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                    padding: 10px 0;
-                    width: 400px;
-                    z-index: 100;
-        
-                    ul {
-                        list-style: none;
-                        padding: 0;
-                        margin: 0;
-        
-                        li {
-                            padding: 10px 20px;
-                            display: flex;
-                            align-items: center;
-                            gap: 10px;
-                            cursor: pointer;
-                            color: rgba(255, 255, 255, 0.9);
-        
-                            &:hover {
-                                background-color: rgba(255, 255, 255, 0.1);
-                            }
-                        }
-                    }
-                }
-            }
-            a , p , span{
-                font-size: 20px;
-            }
+        &:hover {
+          color: chartreuse;
         }
+      }
+    }
+    .numbersViewer {
+      width: 200px;
+    }
+    .addTime {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      .check {
+        opacity: 0;
+      }
+      .modDot {
+        opacity: 0;
+        position: relative;
+        span {
+          font-size: 30px;
+          color: rgba(255, 255, 255, 0.66);
+          &:hover {
+            color: white;
+            cursor: pointer;
+          }
         }
+        .modal {
+          position: absolute;
+          bottom: 30px;
+          left: -400px;
+          background-color: #282828;
+          color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          padding: 10px 0;
+          width: 400px;
+          z-index: 100;
+
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+              padding: 10px 20px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              cursor: pointer;
+              color: rgba(255, 255, 255, 0.9);
+
+              &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+              }
+            }
+          }
+        }
+      }
+      a,
+      p,
+      span {
+        font-size: 20px;
+      }
+    }
+  }
 }

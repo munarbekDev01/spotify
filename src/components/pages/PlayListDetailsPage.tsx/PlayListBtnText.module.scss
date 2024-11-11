@@ -1,0 +1,105 @@
+.PlayListBtnText {
+  .content {
+    .btnForPlay {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+
+      a {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        color: black;
+        height: 60px;
+        border-radius: 50%;
+        font-size: 25px;
+        background-color: #1ed760;
+        transition: 0.9s;
+        &:hover {
+          transform: scale(1.1);
+          background-color: #1ed75fb9;
+        }
+      }
+
+      p {
+        cursor: pointer;
+        font-size: 30px;
+        color: #1ed760;
+      }
+      .modDot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        position: relative;
+        h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            &:hover {
+                color: white;
+                cursor: pointer;
+            }
+            color: #959393df;
+            span {
+                font-size: 13px;
+            color: #959393df;
+
+            }
+        }
+        span {
+          font-size: 30px;
+          color: rgba(255, 255, 255, 0.66);
+          &:hover {
+            color: white;
+            cursor: pointer;
+          }
+        }
+        .modal {
+          position: absolute;
+          top: -150px;
+          background-color: #282828;
+          color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          padding: 10px 0;
+          width: 400px;
+          z-index: 100;
+
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+              padding: 10px 20px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              cursor: pointer;
+              color: rgba(255, 255, 255, 0.9);
+
+              &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .line {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 0;
+    margin: 30px 10px;
+    display: flex;
+    align-items: center;
+    gap: 40%;
+
+  }
+}

@@ -14,20 +14,8 @@ import { useGetSeveralPlaylistQuery, useLazyGetPlaylistWithIdQuery } from "@/red
 
 const Header: FC = () => {
   const router = useRouter();
-
-  const number = 10
-  console.log(number);
-  
-
-
-  //  useEffect(() => {
-  //   axios.post('https://accounts.spotify.com/api/token').then((res) => {
-  //     console.log(res);
-  //   })
-  // }, [])
   const {data} = useGetSeveralPlaylistQuery()
   
-  console.log(data);
   
 
   const handleLogin = () => {

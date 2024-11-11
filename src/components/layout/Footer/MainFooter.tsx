@@ -5,67 +5,78 @@ import { FaTwitter } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 
 const MainFooter: FC = () => {
- return (
-  <section className={scss.MainFooter}>
-    <div className={scss.content}>
+  return (
+    <section className={scss.MainFooter}>
+      <div className={scss.content}>
         <div className={scss.footerTop}>
-            <div className={scss.text}>
-                <h5>Компания</h5>
-                <p>О нас</p>
-                <p>Вакансии</p>
-                <p>For the Record</p>
-            </div>
-            <div className={scss.text}>
-                <h5>Сообщества</h5>
-                <p>Для исполнителей</p>
-                <p>Для разработчиков
-</p>
-<p>Реклама
-</p>
-<p>Для инвесторов</p>
-<p>Для вендоров
-</p>
-            </div>
-            <div className={scss.text}>
-                <h5>Полезные ссылки
+          <div className={scss.text}>
+            <h5>Компания</h5>
+            <p>О нас</p>
+            <p>Вакансии</p>
+            <p>For the Record</p>
+          </div>
+          <div className={scss.text}>
+            <h5>Сообщества</h5>
+            <p>Для исполнителей</p>
+            <p>Для разработчиков</p>
+            <p>Реклама</p>
+            <p>Для инвесторов</p>
+            <p>Для вендоров</p>
+          </div>
+          <div className={scss.text}>
+            <h5>Полезные ссылки</h5>
+            <p>Справка</p>
+            <p>Бесплатное мобильное</p>
+            <p>приложение</p>
+          </div>
 
-</h5>
-<p>Справка
-</p>
-<p>Бесплатное мобильное</p>
-<p>приложение</p>
-            </div>
-
-            <div className={scss.text}>
-                <h5>Планы Spotify</h5>
-                <p>Индивидуальная подписка Spotify Premium</p>
-                <p>Premium для двоих</p>
-                <p>Premium для семьи</p>
-                <p>Premium для студентов
-</p>
-<p>Бесплатная версия Spotify
-</p>
-            </div>
-            <div className={scss.icons}>
-                <a>
-<FaInstagram />
-
-                </a>
-                <a>
-<FaTwitter />
-
-
-                </a>
-                <a>
-<FaFacebook />
-
-
-                </a>
-            </div>
+          <div className={scss.text}>
+            <h5>Планы Spotify</h5>
+            <p>Индивидуальная подписка Spotify Premium</p>
+            <p>Premium для двоих</p>
+            <p>Premium для семьи</p>
+            <p>Premium для студентов</p>
+            <p>Бесплатная версия Spotify</p>
+          </div>
+          <div className={scss.icons}>
+            <a>
+              <FaInstagram />
+            </a>
+            <a>
+              <FaTwitter />
+            </a>
+            <a>
+              <FaFacebook />
+            </a>
+          </div>
         </div>
-    </div>
-  </section>
- );
+        <div className={scss.line}>
+
+        </div>
+        <div className={scss.footerBottom}>
+            <div className={scss.glTexts}>
+
+            <div className={scss.text}>
+                <a>Юридическая информация</a>
+                <a>Центр безопасности и конфиденциальности</a>
+            </div>
+            <div className={scss.text}>
+                <a>Политика конфиденциальности</a>
+                <a>Файлы cookie</a>
+                <a>О рекламе</a>
+            </div>
+            <div className={scss.text}>
+                <a>Специальные возможности</a>
+            </div>
+            </div>
+            <>
+                <p>© 2024 Spotify AB</p>
+            </>
+
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default MainFooter;
