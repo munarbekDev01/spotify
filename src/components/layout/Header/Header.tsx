@@ -13,7 +13,6 @@ import Link from "next/link";
 
 const Header: FC = () => {
   const router = useRouter();
-  const [regis, setRegis] = useState(false);
 
   return (
     <header className={scss.Header}>
@@ -23,7 +22,7 @@ const Header: FC = () => {
             <ImSpotify />
           </h1>
           <div className={scss.nav}>
-            <Link className={scss.home} href="/home">
+            <Link className={scss.home} href="/">
               <GoHomeFill />
             </Link>
 

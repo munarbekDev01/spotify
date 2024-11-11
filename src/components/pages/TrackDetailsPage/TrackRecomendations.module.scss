@@ -1,0 +1,19 @@
+.TrackRecomendations {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .content {
+        width: 70%;
+        background-color: #2b312b;
+        padding: 20px; 
+        .headText {
+            h1 {
+                span {
+                    color: rgba(255, 255, 255, 0.51);
+                    font-size: 12px;
+                }
+            }
+        }
+    
+    }}
